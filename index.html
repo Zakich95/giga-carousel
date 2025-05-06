@@ -10,7 +10,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #000000; /* Noir pur */
+      background-color: #000; /* Noir profond */
       color: white;
       font-family: sans-serif;
       display: flex;
@@ -34,26 +34,27 @@
     }
 
     .owl-dots {
-      display: none !important; /* Cacher les points de navigation */
+      display: none !important;
     }
   </style>
 </head>
 <body>
 
   <h1>Nos Références</h1>
-  <div class="owl-carousel owl-theme">
-    <div class="item"><img src="https://e7.pngegg.com/pngimages/57/150/png-clipart-the-coca-cola-company-fizzy-drinks-coca-cola-food-company.png" alt="Logo 1"></div>
-    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/2-130x87.png" alt="Logo 2"></div>
-    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/3-130x87.png" alt="Logo 3"></div>
-    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/4-130x87.png" alt="Logo 4"></div>
-    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/5-130x87.png" alt="Logo 5"></div>
-    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/6-130x87.png" alt="Logo 6"></div>
-    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/7-130x87.png" alt="Logo 7"></div>
-  </div>
+  <div class="owl-carousel owl-theme" id="carousel"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
+    const totalImages = 7; // Ajuste ce nombre selon tes PNG disponibles
+    const basePath = "references-logos/logo"; // Assure-toi que les images sont nommées logo1.png, logo2.png, etc.
+
+    for (let i = 1; i <= totalImages; i++) {
+      const imgPath = `${basePath}${i}.png`;
+      const imgElement = `<div class="item"><img src="${imgPath}" alt="Logo ${i}"></div>`;
+      document.getElementById("carousel").insertAdjacentHTML("beforeend", imgElement);
+    }
+
     $(document).ready(function(){
       $('.owl-carousel').owlCarousel({
         loop:true,
