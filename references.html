@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Références</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000; /* Noir pur */
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .owl-carousel {
+      width: 90%;
+      margin-top: 40px;
+    }
+
+    .item {
+      text-align: center;
+    }
+
+    .item img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 2px #fff);
+    }
+
+    .owl-dots {
+      display: none !important; /* Cacher les points de navigation */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Nos Références</h1>
+  <div class="owl-carousel owl-theme">
+    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/1-130x87.png" alt="Logo 1"></div>
+    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/2-130x87.png" alt="Logo 2"></div>
+    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/3-130x87.png" alt="Logo 3"></div>
+    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/4-130x87.png" alt="Logo 4"></div>
+    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/5-130x87.png" alt="Logo 5"></div>
+    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/6-130x87.png" alt="Logo 6"></div>
+    <div class="item"><img src="https://gigagraphic.dz/image/cache/catalog/7-130x87.png" alt="Logo 7"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay:true,
+        autoplayTimeout:2000,
+        responsive:{
+          0:{ items:2 },
+          600:{ items:4 },
+          1000:{ items:6 }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
